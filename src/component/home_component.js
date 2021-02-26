@@ -397,7 +397,7 @@ function Home_middle_1(props) {
     >
       <div className="row">
         <div
-          className="col-md-6"
+          className="col-sm-12 col-md-6 col-lg-6"
           style={{
             marginLeft: "10%",
             marginTop: "3%",
@@ -405,14 +405,20 @@ function Home_middle_1(props) {
           }}
         >
           <Introduce_1 />
-          <div className="d-flex" style={{ marginTop: "20%", height: "25%" }}>
-            <Card_1 handle_card1_click={props.handle_card1_click} />
-            <Card_2 handle_card2_click={props.handle_card2_click} />
-            <Card_3 handle_card3_click={props.handle_card3_click} />
+          <div className="row" style={{ marginTop: "20%", height: "25%" }}>
+            <div className="col-sm-6 col-md-6 col-lg-4">
+              <Card_1 handle_card1_click={props.handle_card1_click} />
+            </div>
+            <div className="col-sm-6 col-md-6 col-lg-4">
+              <Card_2 handle_card2_click={props.handle_card2_click} />
+            </div>
+            <div className="col-sm-6 col-md-6 col-lg-4">
+              <Card_3 handle_card3_click={props.handle_card3_click} />
+            </div>
           </div>
         </div>
         <div
-          className="col-md-4 "
+          className="col-sm-6 col-md-4 "
           style={{ marginTop: "3%", marginBottom: "3%" }}
         >
           <Mid_image display_num={props.display_card_num} />
@@ -426,7 +432,7 @@ import arrow_r from "../../images/arrow_r.png";
 
 function Introduce_1() {
   return (
-    <div style={{ width: "95%" }}>
+    <div style={{ width: "95%",paddingRight:"5%" }}>
       <span
         style={{
           color: "#ef8709",
@@ -505,7 +511,7 @@ function Card_1(props) {
   return (
     <div
       className="card item"
-      style={{ width: "29%" }}
+      style={{ width: "100%", height: "100%" }}
       onClick={props.handle_card1_click}
     >
       <div className="card-body">
@@ -549,7 +555,7 @@ function Card_2(props) {
   return (
     <div
       className="card item"
-      style={{ width: "29%" }}
+      style={{ width: "100%", height: "100%" }}
       onClick={props.handle_card2_click}
     >
       <div className="card-body">
@@ -582,7 +588,7 @@ function Card_3(props) {
   return (
     <div
       className="card item"
-      style={{ width: "29%" }}
+      style={{ width: "100%", height: "100%" }}
       onClick={props.handle_card3_click}
     >
       <div className="card-body">

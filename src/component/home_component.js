@@ -43,42 +43,135 @@ const tooltip = [
   {
     id: 1,
     name: "doorbell Camera ",
+    pic_link: tp1,
     content:
       "See who's at the door with live video and two-way voice. If you’re not home, you can speak to your visitor and even unlock the door for your trusted guests.",
-    a_left: 0.04,
-    a_top: 0.77,
-    c_left: 0.07,
-    c_top: 0.65
+    a_left: -0.01,
+    a_top: 0.64,
+    c_left: 0.02,
+    c_top: 0.49
   },
   {
     id: 2,
-    name: "doorbell Camera ",
+    name: "Smart Lock ",
+    pic_link: tp2,
     content:
-      "See who's at the door with live video and two-way voice. If you’re not home, you can speak to your visitor and even unlock the door for your trusted guests.",
-    a_left: 0.7,
-    a_top: 0.3,
-    c_left: 0.7,
-    c_top: 0.25
+      "Eliminate the need for keys with smart locks. Give each user their own lock code, remotely lock or unlock the door through your app, and get a notification whenever a user unlocks the door.",
+    a_left: 0.06,
+    a_top: 0.64,
+    c_left: 0.09,
+    c_top: 0.47
   },
   {
     id: 3,
-    name: "doorbell Camera ",
+    name: "Garage Door Control ",
+    pic_link: tp3,
     content:
-      "See who's at the door with live video and two-way voice. If you’re not home, you can speak to your visitor and even unlock the door for your trusted guests.",
-    a_left: 0.75,
-    a_top: 0.3,
-    c_left: 0.75,
-    c_top: 0.25
+      "Always forgetting to close the garage? Get an alert if the garage is left open, and close it from your app",
+    a_left: 0.3,
+    a_top: 0.56,
+    c_left: 0.33,
+    c_top: 0.43
   },
   {
     id: 4,
-    name: "oorbell Camera ",
+    name: "Water Sensor ",
+    pic_link: tp4,
     content:
-      "See who's at the door with live video and two-way voice. If you’re not home, you can speak to your visitor and even unlock the door for your trusted guests.",
+      "Don’t let water leaks go undetected. Get alerts if a leak is detected and avoid potentially costly water damage",
+    a_left: 0.4,
+    a_top: 0.47,
+    c_left: 0.0,
+    c_top: 0.35
+  },
+
+  {
+    id: 7,
+    name: "Window Sensor ",
+    pic_link: tp5,
+    content:
+      "Window sensors can notify you if a window is left open and communicate with your thermostat to help modify the temperature setting if left open for too long.",
     a_left: 0.8,
-    a_top: 0.4,
-    c_left: 0.8,
+    a_top: 0.18,
+    c_left: 0.4,
+    c_top: 0.03
+  },
+  {
+    id: 6,
+    name: "Outdoor Video Camera ",
+    pic_link: tp6,
+    content:
+      "Know what's going on outside your home without having to leave the couch. Weather-resistant, freeze-resistant and UV protected, with a wide field of view and night vision.",
+    a_left: 0.92,
+    a_top: 0.2,
+    c_left: 0.53,
+    c_top: 0.04
+  },
+  {
+    id: 5,
+    name: "Security Panel ",
+    pic_link: tp7,
+    content:
+      "With a variety of panels to choose from, you can take advantage of features such as two-way voice for emergency response, and severe weather alerts that notify you if dangerous conditions are detected nearby. Alarm.com’s Crash & Smash technology ensures that your system will still work even if the panel is smashed.",
+    a_left: 0.54,
+    a_top: 0.56,
+    c_left: 0.56,
     c_top: 0.33
+  },
+  {
+    id: 8,
+    name: "Video Camera",
+    pic_link: tp8,
+    content:
+      "Keep an eye on what matters to you. Peek-in to watch live streaming video anytime, get video alerts if a specific activity occurs, and watch recorded clips – all from your app.",
+    a_left: 0.07,
+    a_top: 0.18,
+    c_left: 0.09,
+    c_top: 0.2
+  },
+  {
+    id: 9,
+    name: "Temp Sensor",
+    pic_link: tp9,
+    content:
+      "Add a temperature sensor to any room for added temperature optimization.",
+    a_left: 0.37,
+    a_top: 0.18,
+    c_left: 0.39,
+    c_top: 0.21
+  },
+  {
+    id: 12,
+    name: "Image Sensor",
+    pic_link: tp10,
+    content:
+      "See what’s happening when motion is detected. The image sensor snaps a picture and sends it to you, so you’ll know what’s happening.",
+    a_left: 0.56,
+    a_top: 0.03,
+    c_left: 0.58,
+    c_top: 0.05
+  },
+  {
+    id: 11,
+    name: "Smoke & CO Detectors",
+    pic_link: tp11,
+    content:
+      "Manage lights with automatic schedules, and set rules to have lights automatically turn on in an alarm event for added visibility and safety.",
+    a_left: 0.25,
+    a_top: 0.02,
+    c_left: 0.27,
+    c_top: 0.05
+  },
+  {
+    id: 10,
+    name: "Light Control",
+    pic_link: tp12,
+    content:
+      "Manage lights with automatic schedules, and set rules to have lights automatically turn on in an alarm event for added visibility and safety.",
+    a_left: 0.49,
+    a_top: 0.23,
+    c_left: 0.1,
+    c_top: 0.26
   }
 ];
 
@@ -140,6 +233,19 @@ export class Card_manage extends React.Component {
   }
 }
 
+import tp1 from "../../images/ring.png";
+import tp2 from "../../images/tp2.png";
+import tp3 from "../../images/tp3.png";
+import tp4 from "../../images/tp4.png";
+import tp5 from "../../images/tp5.png";
+import tp6 from "../../images/tp6.png";
+import tp7 from "../../images/tp7.png";
+import tp8 from "../../images/tp8.png";
+import tp9 from "../../images/tp9.png";
+import tp10 from "../../images/tp10.png";
+import tp11 from "../../images/tp11.png";
+import tp12 from "../../images/tp12.png";
+
 export class Middle_2_manage extends React.Component {
   constructor(props) {
     super(props);
@@ -148,6 +254,18 @@ export class Middle_2_manage extends React.Component {
 
     this.handle_mouse_enter = this.handle_mouse_enter.bind(this);
     this.handle_mouse_out = this.handle_mouse_out.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.handleResize.bind(this)); //监听窗口大小改变
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize.bind(this));
+  }
+
+  handleResize() {
+    this.setState({ active_number: 1000 });
   }
 
   handle_mouse_enter(number) {
@@ -166,15 +284,70 @@ export class Middle_2_manage extends React.Component {
 
       if_active = index == active_number1 ? false : true;
 
+      var screen_width = document.body.clientWidth;
+
+      var a_top_s, c_top_s;
+
+      if (item.id < 4) {
+        if (screen_width < 1400 && screen_width >= 1200) {
+          a_top_s = item.a_top - 0.02;
+          c_top_s = item.c_top - 0.02;
+        } else if (screen_width < 1200 && screen_width >= 990) {
+          a_top_s = item.a_top - 0.06;
+          c_top_s = item.c_top - 0.06;
+        } else if (screen_width < 1000) {
+          a_top_s = item.a_top - 0.12;
+          c_top_s = item.c_top - 0.12;
+        } else {
+          a_top_s = item.a_top;
+          c_top_s = item.c_top;
+        }
+      } else if (item.id < 6) {
+        if (screen_width < 1400 && screen_width >= 1200) {
+          a_top_s = item.a_top - 0.02;
+          c_top_s = item.c_top - 0.02;
+        } else if (screen_width < 1200 && screen_width >= 990) {
+          a_top_s = item.a_top - 0.04;
+          c_top_s = item.c_top - 0.04;
+        } else if (screen_width < 1000) {
+          a_top_s = item.a_top - 0.08;
+          c_top_s = item.c_top - 0.08;
+        } else {
+          a_top_s = item.a_top;
+          c_top_s = item.c_top;
+        }
+      } else {
+        if (screen_width < 1400 && screen_width >= 1200) {
+          a_top_s = item.a_top - 0.02;
+          c_top_s = item.c_top - 0.02;
+        } else if (screen_width < 1200 && screen_width >= 990) {
+          a_top_s = item.a_top - 0.03;
+          c_top_s = item.c_top - 0.03;
+        } else if (screen_width < 1000) {
+          a_top_s = item.a_top - 0.04;
+          c_top_s = item.c_top - 0.04;
+        } else {
+          a_top_s = item.a_top;
+          c_top_s = item.c_top;
+        }
+      }
+
+      if (index == 0) {
+        console.log(screen_width);
+        console.log(item.a_top);
+        console.log(a_top_s);
+      }
+
       var a_left1 = (item.a_left * 100).toString() + "%";
-      var a_top1 = (item.a_top * 100).toString() + "%";
+      var a_top1 = (a_top_s * 100).toString() + "%";
       var c_left1 = (item.c_left * 100).toString() + "%";
-      var c_top1 = (item.c_top * 100).toString() + "%";
+      var c_top1 = (c_top_s * 100).toString() + "%";
 
       return (
         <Middle_2_tooltip
           key={item.id.toString()}
           active={if_active}
+          pic_link={item.pic_link}
           content={item.content}
           name={item.name}
           a_left={a_left1}
@@ -432,7 +605,7 @@ import arrow_r from "../../images/arrow_r.png";
 
 function Introduce_1() {
   return (
-    <div style={{ width: "95%",paddingRight:"5%" }}>
+    <div style={{ width: "95%", paddingRight: "5%" }}>
       <span
         style={{
           color: "#ef8709",
@@ -712,7 +885,6 @@ function Middle_2_container(props) {
     </div>
   );
 }
-import ring from "../../images/ring.png";
 
 function Middle_2_tooltip(props) {
   var display_c = props.active == true ? "none" : "block";
@@ -744,7 +916,8 @@ function Middle_2_tooltip(props) {
           height: "auto",
           display: display_c,
           backgroundColor: "white",
-          border: " solid 2px #ef8709"
+          border: " solid 2px #ef8709",
+          zIndex: "100"
         }}
         onMouseOut={props.handle_mouse_out}
       >
@@ -758,7 +931,7 @@ function Middle_2_tooltip(props) {
           }}
         >
           <span>
-            <img src={ring} style={{ width: "7%" }} />
+            <img src={props.pic_link} style={{ width: "7%" }} />
           </span>
           &nbsp;&nbsp;{props.name}
         </div>
@@ -894,28 +1067,51 @@ function Middle_3_text(props) {
   );
 }
 
-/////////////////////the function below used to process foot
+/////////////////////the function below used to process foot/////////////////////////////////////////////////////////////////////////
 
 function Foot_text() {
   return (
     <div>
-      <span style={{ color: "orange" }}>网站注册</span>
-      <br />
-      <span style={{ color: "orange" }}>公司地址</span>
-      <br />
-      <span style={{ color: "orange" }}>电话</span>
-      <br />
-      <span style={{ color: "orange" }}>邮箱地址</span>
+      <div style={{ color: "#ef8709", fontWeight: "600", fontSize: "15px" }}>
+        © SkynOcean Solutions Inc 2021
+      </div>
+
+      <div style={{ color: "#ef8709", fontWeight: "600", fontSize: "15px" }}>
+        Address: 601 XXXXX Summerside C1X XXX XXX
+      </div>
+
+      <div style={{ color: "#ef8709", fontWeight: "600", fontSize: "15px" }}>
+        Email: xxxxx@gamil.cm Phone: 902 xxx xxx
+      </div>
     </div>
   );
 }
 
 export function Foot_container() {
   return (
-    <div style={{ backgroundColor: "black", paddingTop: "20px" }}>
-      <div style={{ textAlign: "center" }}>
+    <div
+      style={{
+        position: "relative"
+      }}
+    >
+      <div style={{ textAlign: "center", paddingTop: "5%" }}>
         <Foot_text />
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          left: "0",
+          top: "0",
+          zIndex: "-2"
+        }}
+      >
+        <Foot_image />
       </div>
     </div>
   );
+}
+
+import bottom from "../../images/bottom.svg";
+function Foot_image() {
+  return <img src={bottom} style={{ height: "70%", width: "100%" }} />;
 }

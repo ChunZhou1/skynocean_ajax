@@ -3,6 +3,6 @@ import Home from "./home";
 import Product from "./product";
 
 function App() {
-  return <Product />;
+  return <Home />;
 }
 export default App;

@@ -192,9 +192,18 @@ export default Header;
 
 function Header(props) {
   return (
-    <div className="container-fluid px-0" style={{ height: "46px" }}>
-      <div style={{ backgroundColor: "#ef8709", height: "12px" }}></div>
-      <Home_nav_manage />
+    <div className="container-fluid px-0">
+      <div style={{ backgroundColor: "#ef8709", height: "20px" }}></div>
+      <div className="d-flex justify-content-between">
+        <div
+          style={{ marginLeft: "9%", marginTop: "0.2%", marginBottom: "0%" }}
+        >
+          <Brand />
+        </div>
+        <div style={{ marginRight: "10%", marginTop: "1.5%" }}>
+          <Home_nav_manage />
+        </div>
+      </div>
     </div>
   );
 }
@@ -222,9 +231,45 @@ export class Card_manage extends React.Component {
 
   render() {
     var display_num1 = this.state.display_card_num;
+    var src1t, src2t, src3t, class1t, class2t, class3t;
+    src1t = si1;
+    src2t = si2;
+    src3t = si3;
+    class1t = "card item";
+    class2t = "card item";
+    class3t = "card item";
+
+    switch (display_num1) {
+      case 0:
+        src1t = si1_1;
+        class1t = "card item show";
+        break;
+
+      case 1:
+        src2t = si2_1;
+        class2t = "card item show";
+        break;
+
+      case 2:
+        src3t = si3_1;
+        class3t = "card item show";
+        break;
+
+      default:
+        src1t = si1_1;
+        class1t = "card item show";
+        break;
+    }
+
     return (
       <Home_middle_1
         display_card_num={display_num1}
+        src1={src1t}
+        src2={src2t}
+        src3={src3t}
+        class1={class1t}
+        class2={class2t}
+        class3={class3t}
         handle_card1_click={this.handle_card1_click.bind(this)}
         handle_card2_click={this.handle_card2_click.bind(this)}
         handle_card3_click={this.handle_card3_click.bind(this)}
@@ -380,15 +425,20 @@ export class Middle_2_manage extends React.Component {
 
 ////////This is header component/////////////////////////////////////////////////////////////
 
+import brand from "../../images/brand.png";
+function Brand() {
+  return <img src={brand} style={{ width: "45%" }} />;
+}
+
 /*input: menu_content,href,active */
 function Nav_item(props) {
   if (props.active == true) {
     return (
-      <li className="nav-item" style={{ marginTop: "17px" }}>
+      <li className="nav-item">
         <a
           className="nav-link"
           href={props.href}
-          style={{ color: "#ef8709", fontSize: "15px" }}
+          style={{ color: "#ef8709", fontSize: "15px", fontWeight: "600" }}
           onMouseEnter={props.nav_item_mouse_enter}
           onMouseLeave={props.nav_item_mouse_out}
         >
@@ -398,10 +448,10 @@ function Nav_item(props) {
     );
   } else {
     return (
-      <li className="nav-item" style={{ marginTop: "17px" }}>
+      <li className="nav-item">
         <a
           className="nav-link"
-          style={{ color: "#7491b6", fontSize: "15px" }}
+          style={{ color: "#7491b6", fontSize: "15px", fontWeight: "600" }}
           href={props.href}
           onMouseEnter={props.nav_item_mouse_enter}
           onMouseLeave={props.nav_item_mouse_out}
@@ -439,11 +489,7 @@ class Home_nav extends React.Component {
       );
     });
 
-    return (
-      <ul className="nav justify-content-end " style={{ marginRight: "12%" }}>
-        {menu_list}
-      </ul>
-    );
+    return <ul className="nav justify-content-end ">{menu_list}</ul>;
   }
 }
 
@@ -594,13 +640,25 @@ function Home_middle_1(props) {
           <Introduce_1 />
           <div className="row" style={{ marginTop: "20%", height: "25%" }}>
             <div className="col-sm-6 col-md-6 col-lg-4">
-              <Card_1 handle_card1_click={props.handle_card1_click} />
+              <Card_1
+                handle_card1_click={props.handle_card1_click}
+                src={props.src1}
+                class={props.class1}
+              />
             </div>
             <div className="col-sm-6 col-md-6 col-lg-4">
-              <Card_2 handle_card2_click={props.handle_card2_click} />
+              <Card_2
+                handle_card2_click={props.handle_card2_click}
+                src={props.src2}
+                class={props.class2}
+              />
             </div>
             <div className="col-sm-6 col-md-6 col-lg-4">
-              <Card_3 handle_card3_click={props.handle_card3_click} />
+              <Card_3
+                handle_card3_click={props.handle_card3_click}
+                src={props.src3}
+                class={props.class3}
+              />
             </div>
           </div>
         </div>
@@ -694,17 +752,20 @@ function Introduce_1() {
 import si1 from "../../images/si1.png";
 import si2 from "../../images/si2.png";
 import si3 from "../../images/si3.png";
+import si1_1 from "../../images/si1_1.png";
+import si2_1 from "../../images/si2_1.png";
+import si3_1 from "../../images/si3_1.png";
 function Card_1(props) {
   return (
     <div
-      className="card item"
+      className={props.class}
       style={{ width: "100%", height: "100%" }}
       onClick={props.handle_card1_click}
     >
       <div className="card-body">
         <div>
           <span>
-            <img src={si1} style={{ width: "20%" }}></img>
+            <img src={props.src} style={{ width: "20%" }}></img>
             &nbsp;
           </span>
           <span style={{ fontWeight: "800", fontSize: "18px" }}>
@@ -741,14 +802,14 @@ function Card_1(props) {
 function Card_2(props) {
   return (
     <div
-      className="card item"
+      className={props.class}
       style={{ width: "100%", height: "100%" }}
       onClick={props.handle_card2_click}
     >
       <div className="card-body">
         <div>
           <span>
-            <img src={si2} style={{ width: "15%" }}></img>
+            <img src={props.src} style={{ width: "15%" }}></img>
             &nbsp;
           </span>
           <span style={{ fontWeight: "800", fontSize: "16px" }}>
@@ -774,14 +835,14 @@ function Card_2(props) {
 function Card_3(props) {
   return (
     <div
-      className="card item"
+      className={props.class}
       style={{ width: "100%", height: "100%" }}
       onClick={props.handle_card3_click}
     >
       <div className="card-body">
         <div>
           <span>
-            <img src={si3} style={{ width: "20%" }}></img>
+            <img src={props.src} style={{ width: "20%" }}></img>
             &nbsp;
           </span>
           <span style={{ fontWeight: "800", fontSize: "18px" }}>Farming</span>

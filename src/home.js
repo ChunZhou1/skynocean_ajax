@@ -10,7 +10,7 @@ import { Foot_container } from "./component/home_component";
 function Home() {
   return (
     <div>
-      <Header />;
+      <Header />
       <Carousel_container />
       <Card_manage />
       <Middle_2_manage />
@@ -20,6 +20,5 @@ function Home() {
     </div>
   );
 }
-/*  <Middle_3_container />
-      <Foot_container />*/
+/*  */
 export default Home;

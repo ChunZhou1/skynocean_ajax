@@ -47,9 +47,9 @@ const tooltip = [
     content:
       "See who's at the door with live video and two-way voice. If you’re not home, you can speak to your visitor and even unlock the door for your trusted guests.",
     a_left: -0.01,
-    a_top: 0.64,
+    a_top: 0.89,
     c_left: 0.02,
-    c_top: 0.49
+    c_top: 0.69
   },
   {
     id: 2,
@@ -58,9 +58,9 @@ const tooltip = [
     content:
       "Eliminate the need for keys with smart locks. Give each user their own lock code, remotely lock or unlock the door through your app, and get a notification whenever a user unlocks the door.",
     a_left: 0.06,
-    a_top: 0.64,
+    a_top: 0.89,
     c_left: 0.09,
-    c_top: 0.47
+    c_top: 0.65
   },
   {
     id: 3,
@@ -69,9 +69,9 @@ const tooltip = [
     content:
       "Always forgetting to close the garage? Get an alert if the garage is left open, and close it from your app",
     a_left: 0.3,
-    a_top: 0.56,
+    a_top: 0.78,
     c_left: 0.33,
-    c_top: 0.43
+    c_top: 0.61
   },
   {
     id: 4,
@@ -80,9 +80,9 @@ const tooltip = [
     content:
       "Don’t let water leaks go undetected. Get alerts if a leak is detected and avoid potentially costly water damage",
     a_left: 0.4,
-    a_top: 0.47,
+    a_top: 0.65,
     c_left: 0.0,
-    c_top: 0.35
+    c_top: 0.47
   },
 
   {
@@ -92,9 +92,9 @@ const tooltip = [
     content:
       "Window sensors can notify you if a window is left open and communicate with your thermostat to help modify the temperature setting if left open for too long.",
     a_left: 0.8,
-    a_top: 0.18,
+    a_top: 0.26,
     c_left: 0.4,
-    c_top: 0.03
+    c_top: 0.05
   },
   {
     id: 6,
@@ -102,10 +102,10 @@ const tooltip = [
     pic_link: tp6,
     content:
       "Know what's going on outside your home without having to leave the couch. Weather-resistant, freeze-resistant and UV protected, with a wide field of view and night vision.",
-    a_left: 0.92,
-    a_top: 0.2,
-    c_left: 0.53,
-    c_top: 0.04
+    a_left: 0.9,
+    a_top: 0.28,
+    c_left: 0.5,
+    c_top: 0.07
   },
   {
     id: 5,
@@ -114,9 +114,9 @@ const tooltip = [
     content:
       "With a variety of panels to choose from, you can take advantage of features such as two-way voice for emergency response, and severe weather alerts that notify you if dangerous conditions are detected nearby. Alarm.com’s Crash & Smash technology ensures that your system will still work even if the panel is smashed.",
     a_left: 0.54,
-    a_top: 0.56,
+    a_top: 0.78,
     c_left: 0.56,
-    c_top: 0.33
+    c_top: 0.45
   },
   {
     id: 8,
@@ -124,10 +124,10 @@ const tooltip = [
     pic_link: tp8,
     content:
       "Keep an eye on what matters to you. Peek-in to watch live streaming video anytime, get video alerts if a specific activity occurs, and watch recorded clips – all from your app.",
-    a_left: 0.07,
-    a_top: 0.18,
+    a_left: 0.06,
+    a_top: 0.26,
     c_left: 0.09,
-    c_top: 0.2
+    c_top: 0.28
   },
   {
     id: 9,
@@ -136,9 +136,9 @@ const tooltip = [
     content:
       "Add a temperature sensor to any room for added temperature optimization.",
     a_left: 0.37,
-    a_top: 0.18,
+    a_top: 0.26,
     c_left: 0.39,
-    c_top: 0.21
+    c_top: 0.29
   },
   {
     id: 12,
@@ -147,7 +147,7 @@ const tooltip = [
     content:
       "See what’s happening when motion is detected. The image sensor snaps a picture and sends it to you, so you’ll know what’s happening.",
     a_left: 0.56,
-    a_top: 0.03,
+    a_top: 0.02,
     c_left: 0.58,
     c_top: 0.05
   },
@@ -158,9 +158,9 @@ const tooltip = [
     content:
       "Manage lights with automatic schedules, and set rules to have lights automatically turn on in an alarm event for added visibility and safety.",
     a_left: 0.25,
-    a_top: 0.02,
+    a_top: 0.01,
     c_left: 0.27,
-    c_top: 0.05
+    c_top: 0.04
   },
   {
     id: 10,
@@ -169,9 +169,9 @@ const tooltip = [
     content:
       "Manage lights with automatic schedules, and set rules to have lights automatically turn on in an alarm event for added visibility and safety.",
     a_left: 0.49,
-    a_top: 0.23,
-    c_left: 0.1,
-    c_top: 0.26
+    a_top: 0.33,
+    c_left: 0.52,
+    c_top: 0.16
   }
 ];
 
@@ -289,43 +289,57 @@ export class Middle_2_manage extends React.Component {
       var a_top_s, c_top_s;
 
       if (item.id < 4) {
-        if (screen_width < 1400 && screen_width >= 1200) {
-          a_top_s = item.a_top - 0.02;
-          c_top_s = item.c_top - 0.02;
-        } else if (screen_width < 1200 && screen_width >= 990) {
-          a_top_s = item.a_top - 0.06;
-          c_top_s = item.c_top - 0.06;
-        } else if (screen_width < 1000) {
-          a_top_s = item.a_top - 0.12;
-          c_top_s = item.c_top - 0.12;
+        if (screen_width < 1400 && screen_width >= 995) {
+          a_top_s = item.a_top + 0.0;
+          c_top_s = item.c_top + 0.0;
+        } else if (screen_width < 995 && screen_width >= 768) {
+          a_top_s = item.a_top - 0.2;
+          c_top_s = item.c_top - 0.2;
+        } else if (screen_width < 768) {
+          a_top_s = item.a_top + 0.0;
+          c_top_s = item.c_top + 0.0;
         } else {
           a_top_s = item.a_top;
           c_top_s = item.c_top;
         }
       } else if (item.id < 6) {
-        if (screen_width < 1400 && screen_width >= 1200) {
-          a_top_s = item.a_top - 0.02;
-          c_top_s = item.c_top - 0.02;
-        } else if (screen_width < 1200 && screen_width >= 990) {
-          a_top_s = item.a_top - 0.04;
-          c_top_s = item.c_top - 0.04;
-        } else if (screen_width < 1000) {
-          a_top_s = item.a_top - 0.08;
-          c_top_s = item.c_top - 0.08;
+        if (screen_width < 1400 && screen_width >= 995) {
+          a_top_s = item.a_top + 0.01;
+          c_top_s = item.c_top + 0.01;
+        } else if (screen_width < 995 && screen_width >= 768) {
+          a_top_s = item.a_top - 0.15;
+          c_top_s = item.c_top - 0.15;
+        } else if (screen_width < 768) {
+          a_top_s = item.a_top + 0.01;
+          c_top_s = item.c_top + 0.01;
+        } else {
+          a_top_s = item.a_top;
+          c_top_s = item.c_top;
+        }
+      } else if (item.id < 11) {
+        if (screen_width < 1400 && screen_width >= 995) {
+          a_top_s = item.a_top;
+          c_top_s = item.c_top;
+        } else if (screen_width < 995 && screen_width >= 768) {
+          a_top_s = item.a_top - 0.07;
+          c_top_s = item.c_top - 0.07;
+        } else if (screen_width < 768) {
+          a_top_s = item.a_top + 0.0;
+          c_top_s = item.c_top + 0.0;
         } else {
           a_top_s = item.a_top;
           c_top_s = item.c_top;
         }
       } else {
-        if (screen_width < 1400 && screen_width >= 1200) {
-          a_top_s = item.a_top - 0.02;
-          c_top_s = item.c_top - 0.02;
-        } else if (screen_width < 1200 && screen_width >= 990) {
-          a_top_s = item.a_top - 0.03;
-          c_top_s = item.c_top - 0.03;
-        } else if (screen_width < 1000) {
-          a_top_s = item.a_top - 0.04;
-          c_top_s = item.c_top - 0.04;
+        if (screen_width < 1400 && screen_width >= 995) {
+          a_top_s = item.a_top;
+          c_top_s = item.c_top;
+        } else if (screen_width < 995 && screen_width >= 768) {
+          a_top_s = item.a_top;
+          c_top_s = item.c_top;
+        } else if (screen_width < 768) {
+          a_top_s = item.a_top + 0.0;
+          c_top_s = item.c_top + 0.0;
         } else {
           a_top_s = item.a_top;
           c_top_s = item.c_top;

@@ -16,8 +16,10 @@ function Home() {
       <Middle_2_manage />
       <Middle_3_container />
       <Foot_container />
+      
     </div>
   );
 }
-
+/*  <Middle_3_container />
+      <Foot_container />*/
 export default Home;

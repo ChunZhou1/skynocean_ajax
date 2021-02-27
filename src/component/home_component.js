@@ -14,6 +14,10 @@ import mid_3 from "../../images/mid_3.png";
 import house from "../../images/house.svg";
 import circle from "../../images/Circle.svg";
 
+import { getExplore } from "../brower.js";
+import { getExploreName } from "../brower.js";
+import { compensate } from "../brower.js";
+
 const main_menu = [
   {
     id: 1,
@@ -331,70 +335,17 @@ export class Middle_2_manage extends React.Component {
 
       var screen_width = document.body.clientWidth;
 
+      var brower = getExploreName();
+
       var a_top_s, c_top_s;
 
-      if (item.id < 4) {
-        if (screen_width < 1400 && screen_width >= 995) {
-          a_top_s = item.a_top + 0.0;
-          c_top_s = item.c_top + 0.0;
-        } else if (screen_width < 995 && screen_width >= 768) {
-          a_top_s = item.a_top - 0.2;
-          c_top_s = item.c_top - 0.2;
-        } else if (screen_width < 768) {
-          a_top_s = item.a_top + 0.0;
-          c_top_s = item.c_top + 0.0;
-        } else {
-          a_top_s = item.a_top;
-          c_top_s = item.c_top;
-        }
-      } else if (item.id < 6) {
-        if (screen_width < 1400 && screen_width >= 995) {
-          a_top_s = item.a_top + 0.01;
-          c_top_s = item.c_top + 0.01;
-        } else if (screen_width < 995 && screen_width >= 768) {
-          a_top_s = item.a_top - 0.15;
-          c_top_s = item.c_top - 0.15;
-        } else if (screen_width < 768) {
-          a_top_s = item.a_top + 0.01;
-          c_top_s = item.c_top + 0.01;
-        } else {
-          a_top_s = item.a_top;
-          c_top_s = item.c_top;
-        }
-      } else if (item.id < 11) {
-        if (screen_width < 1400 && screen_width >= 995) {
-          a_top_s = item.a_top;
-          c_top_s = item.c_top;
-        } else if (screen_width < 995 && screen_width >= 768) {
-          a_top_s = item.a_top - 0.07;
-          c_top_s = item.c_top - 0.07;
-        } else if (screen_width < 768) {
-          a_top_s = item.a_top + 0.0;
-          c_top_s = item.c_top + 0.0;
-        } else {
-          a_top_s = item.a_top;
-          c_top_s = item.c_top;
-        }
-      } else {
-        if (screen_width < 1400 && screen_width >= 995) {
-          a_top_s = item.a_top;
-          c_top_s = item.c_top;
-        } else if (screen_width < 995 && screen_width >= 768) {
-          a_top_s = item.a_top;
-          c_top_s = item.c_top;
-        } else if (screen_width < 768) {
-          a_top_s = item.a_top + 0.0;
-          c_top_s = item.c_top + 0.0;
-        } else {
-          a_top_s = item.a_top;
-          c_top_s = item.c_top;
-        }
-      }
+      var result = compensate(item.id, item.a_top, item.c_top);
+
+      a_top_s = result[0];
+      c_top_s = result[1];
 
       if (index == 0) {
         console.log(screen_width);
-        console.log(item.a_top);
-        console.log(a_top_s);
       }
 
       var a_left1 = (item.a_left * 100).toString() + "%";

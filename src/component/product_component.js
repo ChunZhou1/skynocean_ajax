@@ -4,10 +4,6 @@ const bootstrap = require("bootstrap");
 
 import "../bootstrap/css/bootstrap.min.css";
 import css from "./product_component.css";
-import Product from "../product";
-
-import { Middle_3_image_text } from "./home_component";
-import { Middle_3_image } from "./home_component";
 
 import mid_1 from "../../images/mid_1.png";
 import mid_2 from "../../images/mid_2.png";
@@ -209,4 +205,6 @@ export class Product_manage extends React.Component {
   }
 }
 
-//////////////
+/*export function Product_manage() {
+  return <div>Hello!!!!!!!!!!!!!!!!!!!!!!!!!</div>;
+}*/

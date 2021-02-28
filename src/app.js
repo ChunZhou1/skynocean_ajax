@@ -1,19 +1,33 @@
 import React from "react";
 
 import { BrowserRouter } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
-import Header from "./component/home_component";
-import { Foot_container } from "./component/home_component";
-import { Carousel_container } from "./component/home_component";
-import { Main } from "./home";
+import { Home } from "./home";
+import { Product } from "./product";
+import { Public_header } from "./public";
+import { Public_footer } from "./public";
+
+function Main() {
+  return (
+    <Switch>
+      <Route path="/product">
+        <Product />
+      </Route>
+      <Route path="/">
+        <Home />
+      </Route>
+            
+    </Switch>
+  );
+}
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Carousel_container />
+      <Public_header />
       <Main />
-      <Foot_container />
+      <Public_footer />
     </BrowserRouter>
   );
 }

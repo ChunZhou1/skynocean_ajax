@@ -19,7 +19,7 @@ const product = [
     content: "Home",
     pic_link: mid_1,
     name: "light",
-    price: "$3.99"
+    price: "$4.99"
   },
 
   {
@@ -145,6 +145,7 @@ function Product_image(props) {
       src={props.src}
       onMouseEnter={props.handle_mouse_enter}
       onMouseLeave={props.handle_mouse_out}
+      style={{ width: "50%" }}
     />
   );
 }

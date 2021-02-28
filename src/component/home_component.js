@@ -4,6 +4,7 @@ const bootstrap = require("bootstrap");
 
 import "../bootstrap/css/bootstrap.min.css";
 import css from "./home_component.css";
+import { Link } from "react-router-dom";
 
 import P1 from "../../images/home1.svg";
 import P2 from "../../images/home2.svg";
@@ -22,22 +23,22 @@ const main_menu = [
   {
     id: 1,
     content: "Home",
-    content_link: "#1"
+    content_link: "/"
   },
   {
     id: 2,
     content: "Service and Product",
-    content_link: "#2"
+    content_link: "/product"
   },
   {
     id: 3,
     content: "Contact us",
-    content_link: "#3"
+    content_link: "/contact"
   },
   {
     id: 4,
     content: "About us",
-    content_link: "#4"
+    content_link: "/about"
   }
 ];
 
@@ -382,33 +383,65 @@ function Brand() {
 }
 
 /*input: menu_content,href,active */
-function Nav_item(props) {
+/*function Nav_item(props) {
   if (props.active == true) {
     return (
       <li className="nav-item">
-        <a
+        <div
           className="nav-link"
-          href={props.href}
+          href={"#"}
           style={{ color: "#ef8709", fontSize: "15px", fontWeight: "600" }}
           onMouseEnter={props.nav_item_mouse_enter}
           onMouseLeave={props.nav_item_mouse_out}
         >
           {props.content}
-        </a>
+        </div>
       </li>
     );
   } else {
     return (
       <li className="nav-item">
-        <a
+        <div
           className="nav-link"
           style={{ color: "#7491b6", fontSize: "15px", fontWeight: "600" }}
-          href={props.href}
+          href={"#"}
           onMouseEnter={props.nav_item_mouse_enter}
           onMouseLeave={props.nav_item_mouse_out}
         >
           {props.content}
-        </a>
+        </div>
+      </li>
+    );
+  }
+}*/
+
+function Nav_item(props) {
+  if (props.active == true) {
+    return (
+      <li className="nav-item">
+        <Link
+          to={props.href}
+          className="nav-link"
+          style={{ color: "#ef8709", fontSize: "15px", fontWeight: "600" }}
+          onMouseEnter={props.nav_item_mouse_enter}
+          onMouseLeave={props.nav_item_mouse_out}
+        >
+          {props.content}
+        </Link>
+      </li>
+    );
+  } else {
+    return (
+      <li className="nav-item">
+        <Link
+          to={props.href}
+          className="nav-link"
+          style={{ color: "#7491b6", fontSize: "15px", fontWeight: "600" }}
+          onMouseEnter={props.nav_item_mouse_enter}
+          onMouseLeave={props.nav_item_mouse_out}
+        >
+          {props.content}
+        </Link>
       </li>
     );
   }
@@ -977,26 +1010,6 @@ function Middle_2_tooltip(props) {
     </div>
   );
 }
-
-/*function Tooltip_dialog(props) {
-  return (
-    <div
-      className="border border-2"
-      style={{
-        left: props.c_left,
-        top: props.c_top,
-
-        width: "40%",
-        height: "auto",
-        display: props.display_c,
-        backgroundColor: "white"
-      }}
-      onMouseOut={props.handle_mouse_out}
-    >
-      {props.content}
-    </div>
-  );
-}*/
 
 //////////////////the function below used to middle_3////////////////////////////////////////
 

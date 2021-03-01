@@ -34,7 +34,7 @@ function Main() {
   return (
     <Switch>
       <Route path="/">
-        <Contact />
+        <Product />
       </Route>
             
     </Switch>

@@ -301,7 +301,7 @@ function Product_image(props) {
 /* */
 function Product_text(props) {
   return (
-    <div style={{ position: "absolute", left: "6%", top: "70%" }}>
+    <div style={{ position: "absolute", left: "6%", top: "70%", width: "90%" }}>
       <span
         style={{
           color: "#1c5996",

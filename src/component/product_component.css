@@ -7,11 +7,7 @@
 .ani {
   cursor: pointer;
   position: relative;
-  -ms-transform: scale(1.5, 1.5); /* IE 9 */
-  -webkit-transform: scale(1.5, 1.5); /* Safari */
-  transform: scale(1.5, 1.5); /* 标准语法 */
-}
-
-.product {
-  width: 20%;
+  -ms-transform: scale(1, 1); /* IE 9 */
+  -webkit-transform: scale(1, 1); /* Safari */
+  transform: scale(1, 1); /* 标准语法 */
 }

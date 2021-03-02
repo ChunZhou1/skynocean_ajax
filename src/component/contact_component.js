@@ -59,7 +59,7 @@ function Contact_introduce() {
             fontWeight: "600"
           }}
         >
-          Address: xxxxxxxxxxx St. summerside PE Canada
+          Address: Bay D, McNeil Mall, 251 Water Street, Summerside, PE, C1N 1B5
         </span>
         <br />
         <span
@@ -68,7 +68,7 @@ function Contact_introduce() {
             fontWeight: "600"
           }}
         >
-          Phone: 902 xxx xxx
+          Phone: 902 436 2414
         </span>
         <br />
         <span
@@ -77,7 +77,7 @@ function Contact_introduce() {
             fontWeight: "600"
           }}
         >
-          mail: xxxx@xxxx.ca
+          mail: info@skynocean.ca
         </span>
       </div>
     </div>
@@ -87,10 +87,10 @@ function Contact_introduce() {
 function Map() {
   return (
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9955.334699463385!2d-79.36843445722373!3d43.818422623739664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d349912dcd07%3A0xdc73a123712f72a4!2sAdventure%20Valley%20Day%20Camp!5e0!3m2!1sen!2sca!4v1614615852931!5m2!1sen!2sca"
-      width={"500"}
-      height={"300"}
-      style={{ border: "0;" }}
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2751.8728977714886!2d-63.79279913508653!3d46.391745929094235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b5f9b2eaa0d5757%3A0x2619e17fbf726c30!2sSummerside%2C%20PE%20C1N%201B5!5e0!3m2!1sen!2sca!4v1614694897546!5m2!1sen!2sca"
+      width={500}
+      height={300}
+      style={{border:"0;"}}
       allowfullscreen={""}
       loading={"lazy"}
     ></iframe>

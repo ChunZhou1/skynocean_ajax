@@ -273,11 +273,11 @@ function Foot_text() {
       </div>
 
       <div style={{ color: "#ef8709", fontWeight: "600", fontSize: "15px" }}>
-        Address: 601 XXXXX Summerside C1X XXX XXX
+        Address: Bay D, McNeil Mall, 251 Water Street, Summerside, PE, C1N 1B5
       </div>
 
       <div style={{ color: "#ef8709", fontWeight: "600", fontSize: "15px" }}>
-        Email: xxxxx@gamil.cm Phone: 902 xxx xxx
+        Email: info@skynocean.ca Phone: 902 436 2414
       </div>
     </div>
   );

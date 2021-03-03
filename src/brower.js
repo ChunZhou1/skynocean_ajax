@@ -193,6 +193,74 @@ function processForSafari(id, a_top, c_top) {
   return result;
 }
 
+function processForFirefox(id, a_top, c_top) {
+  var a_top_s, c_top_s;
+
+  var screen_width = document.body.clientWidth;
+
+  if (id < 4) {
+    if (screen_width < 1400 && screen_width >= 976) {
+      a_top_s = a_top + 0.0;
+      c_top_s = c_top + 0.0;
+    } else if (screen_width < 976 && screen_width >= 753) {
+      a_top_s = a_top - 0.2;
+      c_top_s = c_top - 0.2;
+    } else if (screen_width < 753) {
+      a_top_s = a_top + 0.0;
+      c_top_s = c_top + 0.0;
+    } else {
+      a_top_s = a_top;
+      c_top_s = c_top;
+    }
+  } else if (id < 6) {
+    if (screen_width < 1400 && screen_width >= 976) {
+      a_top_s = a_top + 0.01;
+      c_top_s = c_top + 0.01;
+    } else if (screen_width < 976 && screen_width >= 753) {
+      a_top_s = a_top - 0.15;
+      c_top_s = c_top - 0.15;
+    } else if (screen_width < 753) {
+      a_top_s = a_top + 0.01;
+      c_top_s = c_top + 0.01;
+    } else {
+      a_top_s = a_top;
+      c_top_s = c_top;
+    }
+  } else if (id < 11) {
+    if (screen_width < 1400 && screen_width >= 976) {
+      a_top_s = a_top;
+      c_top_s = c_top;
+    } else if (screen_width < 976 && screen_width >= 753) {
+      a_top_s = a_top - 0.07;
+      c_top_s = c_top - 0.07;
+    } else if (screen_width < 753) {
+      a_top_s = a_top + 0.0;
+      c_top_s = c_top + 0.0;
+    } else {
+      a_top_s = a_top;
+      c_top_s = c_top;
+    }
+  } else {
+    if (screen_width < 1400 && screen_width >= 976) {
+      a_top_s = a_top;
+      c_top_s = c_top;
+    } else if (screen_width < 976 && screen_width >= 753) {
+      a_top_s = a_top;
+      c_top_s = c_top;
+    } else if (screen_width < 753) {
+      a_top_s = a_top + 0.0;
+      c_top_s = c_top + 0.0;
+    } else {
+      a_top_s = a_top;
+      c_top_s = c_top;
+    }
+  }
+
+  var result = [a_top_s, c_top_s];
+
+  return result;
+}
+
 export function compensate(id, a_top, c_top) {
   var brower = getExploreName();
 
@@ -209,7 +277,13 @@ export function compensate(id, a_top, c_top) {
 
       break;
 
-      dafault: result = processForChrome(id, a_top, c_top);
+    case "Firefox":
+      result = processForFirefox(id, a_top, c_top);
+
+      break;
+
+    default:
+      result = processForSafari(id, a_top, c_top);
   }
 
   return result;

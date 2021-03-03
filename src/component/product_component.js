@@ -2,6 +2,8 @@ import React from "react";
 
 const bootstrap = require("bootstrap");
 
+import axios from "axios";
+
 import "../bootstrap/css/bootstrap.min.css";
 import css from "./product_component.css";
 
@@ -321,10 +323,29 @@ export class Product_manage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { active_number: 1000 };
+    this.state = { active_number: 1000, catalog_list: [] };
 
     this.handle_mouse_enter = this.handle_mouse_enter.bind(this);
     this.handle_mouse_out = this.handle_mouse_out.bind(this);
+  }
+
+  componentDidMount() {
+    // 使用axios完成ajax数据请求
+    axios
+      .get("/search/ajax")
+      .then(res => {
+        /*const { goodlists } = res.data;*/
+        this.setState({
+          catalog_list: res.data
+        });
+
+        console.log("receive success!!");
+        console.log(res.data);
+      })
+      .catch(err => {
+        console.log("find error");
+        console.log(err);
+      });
   }
 
   handle_mouse_enter(number) {

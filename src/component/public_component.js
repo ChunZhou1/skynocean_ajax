@@ -58,9 +58,6 @@ function Brand() {
 }
 
 function Nav_item(props) {
-  console.log(props.href);
-  console.log(props.content);
-
   if (props.active == true) {
     return (
       <li className="nav-item">

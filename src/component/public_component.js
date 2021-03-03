@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const bootstrap = require("bootstrap");
 
 import "../bootstrap/css/bootstrap.min.css";
-import css from "./home_component.css";
+import css from "./public_component.css";
 
 import P1 from "../../images/home1.svg";
 import P2 from "../../images/home2.svg";
@@ -268,15 +268,24 @@ class Carousel_1 extends React.Component {
 function Foot_text() {
   return (
     <div>
-      <div style={{ color: "#ef8709", fontWeight: "600", fontSize: "15px" }}>
+      <div
+        style={{ color: "#ef8709", fontWeight: "600" }}
+        className="foot_font_width"
+      >
         © SkynOcean Solutions Inc 2021
       </div>
 
-      <div style={{ color: "#ef8709", fontWeight: "600", fontSize: "15px" }}>
+      <div
+        style={{ color: "#ef8709", fontWeight: "600" }}
+        className="foot_font_width"
+      >
         Address: Bay D, McNeil Mall, 251 Water Street, Summerside, PE, C1N 1B5
       </div>
 
-      <div style={{ color: "#ef8709", fontWeight: "600", fontSize: "15px" }}>
+      <div
+        style={{ color: "#ef8709", fontWeight: "600" }}
+        className="foot_font_width"
+      >
         Email: info@skynocean.ca Phone: 902 436 2414
       </div>
     </div>

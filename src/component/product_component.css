@@ -1,13 +1,18 @@
 .product_img {
   position: relative;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  z-index: 0;
 }
 
 .ani {
   cursor: pointer;
   position: relative;
-  -ms-transform: scale(1, 1); /* IE 9 */
-  -webkit-transform: scale(1, 1); /* Safari */
-  transform: scale(1, 1); /* 标准语法 */
+  z-index: 10;
+
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari */
+  transform: scale(1.2); /* 标准语法 */
 }

@@ -330,15 +330,10 @@ export class Product_manage extends React.Component {
   }
 
   componentDidMount() {
-    // 使用axios完成ajax数据请求
+    // 使用axios完成ajax json数据请求
     axios
       .get("/search/ajax")
       .then(res => {
-        /*const { goodlists } = res.data;*/
-        this.setState({
-          catalog_list: res.data
-        });
-
         console.log("receive success!!");
         console.log(res.data);
       })

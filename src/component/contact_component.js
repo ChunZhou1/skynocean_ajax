@@ -110,7 +110,7 @@ class Contact_image extends React.Component {
 
   componentDidMount() {
     axios
-      .get("/pictute/png", { responseType: "blob" })
+      .get("/get/picture", { responseType: "blob" })
       .then(res => {
         console.log("receive picture!");
 

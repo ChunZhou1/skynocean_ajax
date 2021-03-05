@@ -332,7 +332,7 @@ export class Product_manage extends React.Component {
   componentDidMount() {
     // 使用axios完成ajax json数据请求
     axios
-      .get("/search/ajax")
+      .get("/get/json")
       .then(res => {
         console.log("receive success!!");
         console.log(res.data);

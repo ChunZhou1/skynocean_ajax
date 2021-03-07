@@ -1,8 +1,12 @@
+import "regenerator-runtime/runtime";
+
 import React from "react";
 
 const bootstrap = require("bootstrap");
 
 import axios from "axios";
+
+import async from "async";
 
 import "../bootstrap/css/bootstrap.min.css";
 import css from "./product_component.css";
@@ -318,6 +322,8 @@ function Product_text(props) {
 }
 
 ///////////////////////////////////////////////////////////
+
+//The function below used to ajax req
 
 export class Product_manage extends React.Component {
   constructor(props) {

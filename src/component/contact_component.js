@@ -1,3 +1,7 @@
+import "regenerator-runtime/runtime";
+
+import async from "async";
+
 import React from "react";
 
 const bootstrap = require("bootstrap");
@@ -101,6 +105,40 @@ function Map() {
   return <img src={contact_pic} style={{ width: "50%" }} />;
 }*/
 
+/////////////////////////the function below used to process ajax /////////////////////
+
+async function getPictures() {
+  let reqList = [];
+
+  let resList = [];
+
+  for (let i = 0; i < 5; i++) {
+    let req = axios.get("/get/picture", { responseType: "blob" });
+
+    reqList.push(req);
+    resList.push();
+  }
+
+  return axios.all(reqList).then(
+    axios.spread(function(...resList) {
+      return resList;
+    })
+  );
+}
+
+async function req_product(obj) {
+  let res = await axios.get("/get/json");
+  console.log(res.data);
+  var result = await getPictures();
+
+  var blob = new Blob([result[0].data]);
+
+  var objectURL = URL.createObjectURL(blob);
+
+  obj.setState({ src_pic: objectURL });
+  console.log("setstate ok");
+}
+
 class Contact_image extends React.Component {
   constructor(props) {
     super(props);
@@ -109,25 +147,13 @@ class Contact_image extends React.Component {
   }
 
   componentDidMount() {
-    axios
-      .get("/get/picture", { responseType: "blob" })
-      .then(res => {
-        console.log("receive picture!");
-
-        var blob = new Blob([res.data]);
-
-        var objectURL = URL.createObjectURL(blob);
-
-        this.setState({ src_pic: objectURL });
-      })
-      .catch(err => {
-        console.log("receive picture error");
-        console.log(err);
-      });
+    req_product(this);
   }
 
   render() {
     var src1 = this.state.src_pic;
+    console.log("render ok!");
+    console.log(src1);
 
     return <img src={src1} style={{ width: "50%" }} />;
   }

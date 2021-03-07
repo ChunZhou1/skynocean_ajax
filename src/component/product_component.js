@@ -45,7 +45,7 @@ import cat_4 from "../../images/cat_4.png";
 
 import service from "../../images/service.png";
 
-const product_catalog = [
+/*const product_catalog = [
   {
     id: 1,
     catalog_name: "Smart Home",
@@ -232,7 +232,7 @@ const product = [
     pic_content: cent_26,
     catalog: "Smart Farming - Agriculture"
   }
-];
+];*/
 
 function Product_main_container(props) {
   return (
@@ -325,28 +325,83 @@ function Product_text(props) {
 
 //The function below used to ajax req
 
+async function getPictures(length) {
+  let reqList = [];
+
+  let resList = [];
+
+  console.log(length);
+
+  for (let i = 0; i < length; i++) {
+    let req_url = "/get/picture/" + "cent_" + (i + 1) + ".png";
+
+    /*console.log(req_url);*/
+
+    let req = axios.get(req_url, { responseType: "blob" });
+
+    reqList.push(req);
+    resList.push();
+  }
+
+  return axios.all(reqList).then(
+    axios.spread(function(...resList) {
+      return resList;
+    })
+  );
+}
+
+function process_product(product, input_picture) {
+  var blob, objectURL, product_t;
+
+  product_t = product.data;
+
+  for (var i = 0; i < product_t.length; i++) {
+    blob = new Blob([input_picture[i].data]);
+    objectURL = URL.createObjectURL(blob);
+
+    product_t[i].pic_content = objectURL;
+  }
+
+  return product_t;
+}
+
+async function req_product(obj) {
+  var result_p, result_product, result_catalog, result_product_e;
+  result_product = await axios.get("/get/json/product");
+
+  result_catalog = await axios.get("/get/json/product_catalog");
+
+  result_p = await getPictures(result_product.data.length);
+
+  result_product_e = process_product(result_product, result_p);
+
+  obj.setState({
+    product: result_product_e,
+    product_catalog: result_catalog.data
+  });
+}
+
 export class Product_manage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { active_number: 1000, catalog_list: [] };
+    this.state = {
+      active_number: 1000,
+      catalog_list: [],
+      product: [],
+      product_catalog: []
+    };
 
     this.handle_mouse_enter = this.handle_mouse_enter.bind(this);
     this.handle_mouse_out = this.handle_mouse_out.bind(this);
   }
 
   componentDidMount() {
-    // 使用axios完成ajax json数据请求
-    axios
-      .get("/get/json")
-      .then(res => {
-        console.log("receive success!!");
-        console.log(res.data);
-      })
-      .catch(err => {
-        console.log("find error");
-        console.log(err);
-      });
+    req_product(this).catch(e => {
+      console.log(
+        "There has been a problem with your ajax request: " + e.message
+      );
+    });
   }
 
   handle_mouse_enter(number) {
@@ -358,7 +413,10 @@ export class Product_manage extends React.Component {
   }
 
   render() {
-    var product_catalog_with_list, product_list;
+    var product_catalog_with_list, product_list, product, product_catalog;
+
+    product = this.state.product;
+    product_catalog = this.state.product_catalog;
 
     var active_number1 = this.state.active_number;
 

@@ -22,6 +22,10 @@ export class File_input extends React.Component {
     formData.append("file", this.fileInput.current.files[0]);
     formData.append("userName", "admin");
     formData.append("fileName", "cent_2");
+
+    //for json : JSON.stringify(params),"Content-Type": "application/json"
+    //for form "application/x-www-form-urlencoded;charset=UTF-8"
+
     axios
       .post("/upload/picture", formData, {
         headers: {
